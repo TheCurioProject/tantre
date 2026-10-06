@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" color="#1A1817" role="img"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes gentleFade { from { opacity: 0.8; } to { opacity: 1; } }
+        svg { animation: gentleFade 1s ease-out forwards; }
+      }
+    </style><title>Café</title><desc>Grano grande</desc><path fill="#7B4F33" stroke="#1A1817" stroke-width="6.16" stroke-linecap="round" stroke-linejoin="round" d="M 154.41 122 C 148.59 129.88 137.52 137.61 126.55 141.46 C 115.57 145.31 100.48 146.75 88.54 145.09 C 76.61 143.43 63.26 138.03 54.92 131.5 C 46.58 124.96 40.06 114.79 38.51 105.87 C 36.96 96.96 39.77 85.89 45.59 78 C 51.41 70.12 62.48 62.39 73.45 58.54 C 84.43 54.69 99.52 53.25 111.46 54.91 C 123.39 56.57 136.74 61.97 145.08 68.5 C 153.42 75.04 159.94 85.21 161.49 94.13 C 163.04 103.04 160.23 114.11 154.41 122 Z"/><path fill="none" stroke="#1A1817" stroke-width="4.84" stroke-linecap="round" stroke-linejoin="round" d="M 66.27 81.57 C 71.24 81.63 89.85 75.89 96.13 81.93 C 102.41 87.97 97.68 111.74 103.95 117.82 C 110.22 123.9 128.77 118.33 133.73 118.43"/></svg>

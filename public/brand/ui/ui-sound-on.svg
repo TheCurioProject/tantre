@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" color="#1A1817" role="img"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes uiPop {
+          0% { transform: scale(0.8); opacity: 0; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+        svg { animation: uiPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; transform-origin: center; }
+      }
+    </style><title>Sonido</title><desc>Altavoz</desc><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M 8 19 L 15 19 L 24 11 L 24 37 L 15 29 L 8 29 Z"/><path fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" d="M 31 18 C 34 21 34 27 31 30"/><path fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" d="M 36 14 C 41 19 41 29 36 34"/></svg>

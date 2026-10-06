@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" color="#1A1817" role="img"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes draw {
+          from { stroke-dashoffset: 1000; }
+          to { stroke-dashoffset: 0; }
+        }
+        path {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: draw 2s ease-out forwards;
+        }
+      }
+    </style><title>Garabato vivo</title><desc>Onda continua juguetona</desc><path fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M 14 66 C 17.37 61.96 27.51 41.11 34.2 41.75 C 40.88 42.39 47.1 70.09 54.12 69.86 C 61.13 69.63 68.97 41.69 76.28 40.38 C 83.6 39.07 94.38 58.4 98 62"/></svg>

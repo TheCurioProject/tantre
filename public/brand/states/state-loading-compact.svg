@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" color="#1A1817" role="img"><style id="tantre-anim">
+        @media (prefers-reduced-motion: no-preference) {
+          @keyframes spin { 100% { transform: rotate(360deg); } }
+          svg { animation: spin 1s linear infinite; transform-origin: center; }
+        }
+      </style><title>Cargando compacto</title><desc>Medio arco giratorio currentColor</desc><path fill="none" stroke="currentColor" stroke-width="10.03" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="330 110" d="M 190 120 C 190 133.71 184.69 150.05 176.63 161.14 C 168.57 172.24 154.67 182.34 141.63 186.57 C 128.59 190.81 111.41 190.81 98.37 186.57 C 85.33 182.34 71.43 172.24 63.37 161.14 C 55.31 150.05 50 133.71 50 120 C 50 106.29 55.31 89.95 63.37 78.86 C 71.43 67.76 85.33 57.66 98.37 53.43 C 111.41 49.19 128.59 49.19 141.63 53.43 C 154.67 57.66 168.57 67.76 176.63 78.86 C 184.69 89.95 190 106.29 190 120 Z"/></svg>

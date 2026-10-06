@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" color="#1A1817" role="img"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes draw {
+          from { stroke-dashoffset: 1000; }
+          to { stroke-dashoffset: 0; }
+        }
+        path {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: draw 2s ease-out forwards;
+        }
+      }
+    </style><title>Pincel vivo</title><desc>Pincel en trazos continuos</desc><path fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M 60.19 111.77 C 64.19 111.77 68.95 105.87 71.87 102.24 C 74.8 98.61 76.71 95.33 77.72 89.99 C 78.73 84.65 83.92 73.52 77.93 70.2 C 71.93 66.88 47.72 66.79 41.73 70.09 C 35.73 73.38 40.92 84.63 41.95 89.98 C 42.98 95.34 44.85 98.58 47.89 102.21 C 50.93 105.84 56.19 111.77 60.19 111.77 Z"/><path fill="none" stroke="currentColor" stroke-width="5.95" stroke-linecap="round" stroke-linejoin="round" d="M 43 68 L 77 68"/><path fill="none" stroke="currentColor" stroke-width="5.95" stroke-linecap="round" stroke-linejoin="round" d="M 43 56 L 77 56"/><path fill="none" stroke="currentColor" stroke-width="6.65" stroke-linecap="round" stroke-linejoin="round" d="M 46 56 C 46.46 52.37 47.79 41.54 48.79 34.2 C 49.79 26.87 51.46 15.7 52 12"/><path fill="none" stroke="currentColor" stroke-width="6.65" stroke-linecap="round" stroke-linejoin="round" d="M 74 56 C 73.49 52.29 71.95 41.08 70.95 33.75 C 69.95 26.42 68.49 15.62 68 12"/><path fill="none" stroke="currentColor" stroke-width="5.95" stroke-linecap="round" stroke-linejoin="round" d="M 52 12 L 68 12"/></svg>

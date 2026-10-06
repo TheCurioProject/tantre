@@ -1,0 +1,9 @@
+node_modules
+.next
+out
+public
+tantre-assets
+src/lib/generated
+tmp
+.worker-build
+package-lock.json

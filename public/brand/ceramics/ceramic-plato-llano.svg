@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="48 48 416 416" color="#1A1817" role="img">
+<style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes floatObject {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-2%); }
+        }
+        #tantre-anim-group {
+          animation: floatObject 5s ease-in-out infinite;
+          transform-origin: center;
+        }
+      }
+    </style>
+<title>Plato llano</title><desc>Plato para pintar</desc>
+
+<g id="tantre-anim-group">
+<path fill="#FDF6EC" stroke="#1A1817" stroke-width="11.67" stroke-linecap="round" stroke-linejoin="round" d="M 374 262 C 374 275.71 365.05 292.05 351.46 303.14 C 337.87 314.24 314.45 324.34 292.46 328.57 C 270.48 332.81 241.52 332.81 219.54 328.57 C 197.55 324.34 174.13 314.24 160.54 303.14 C 146.95 292.05 138 275.71 138 262 C 138 248.29 146.95 231.95 160.54 220.86 C 174.13 209.76 197.55 199.66 219.54 195.43 C 241.52 191.19 270.48 191.19 292.46 195.43 C 314.45 199.66 337.87 209.76 351.46 220.86 C 365.05 231.95 374 248.29 374 262 Z"/><path fill="none" stroke="#8E7BD8" stroke-width="19.46" stroke-linecap="round" stroke-linejoin="round" d="M 170 262 C 184.43 258.35 227.88 240.13 256.55 240.13 C 285.22 240.13 327.76 258.35 342 262"/><path fill="none" stroke="#F2C14E" stroke-width="15.56" stroke-linecap="round" stroke-linejoin="round" d="M 150 300 C 167.81 303.7 221.54 322.22 256.87 322.22 C 292.21 322.22 344.48 303.7 362 300"/>
+</g>
+</svg>

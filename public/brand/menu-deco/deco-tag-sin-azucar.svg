@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" color="#1A1817" role="img"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes gentleFade { from { opacity: 0.8; } to { opacity: 1; } }
+        svg { animation: gentleFade 1s ease-out forwards; }
+      }
+    </style><title>Sin azúcar</title><desc>Cubos de azúcar tachados</desc><path fill="#FFFFFF" stroke="#1A1817" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round" d="M 44.08 56.63 C 51.22 47.77 83.21 44.68 91.82 51.87 C 100.42 59.06 102.86 90.92 95.72 99.78 C 88.58 108.64 57.58 112.24 48.97 105.05 C 40.36 97.85 36.94 65.49 44.08 56.63 Z"/><path fill="#FFFFFF" stroke="#1A1817" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round" d="M 103.16 43.02 C 112.16 36.41 144.2 40.84 151.01 50.03 C 157.81 59.21 152.98 91.51 143.98 98.12 C 134.98 104.73 103.81 98.87 97.01 89.68 C 90.2 80.5 94.16 49.63 103.16 43.02 Z"/><path fill="#FFFFFF" stroke="#1A1817" stroke-width="8.4" stroke-linecap="round" stroke-linejoin="round" d="M 73.38 96.62 C 81.59 89.18 112.83 91.13 120.41 99.49 C 127.99 107.85 127.09 139.36 118.88 146.8 C 110.67 154.24 78.71 152.49 71.13 144.12 C 63.55 135.76 65.16 104.06 73.38 96.62 Z"/><path fill="none" stroke="#1A1817" stroke-width="9.66" stroke-linecap="round" stroke-linejoin="round" d="M 46 46 L 154 154"/></svg>

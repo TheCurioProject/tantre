@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" color="#1A1817" role="img"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes uiPop {
+          0% { transform: scale(0.8); opacity: 0; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+        svg { animation: uiPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; transform-origin: center; }
+      }
+    </style><title>Filtros</title><desc>Embudo de filtros</desc><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M 8 10 L 40 10 L 28 26 L 28 38 L 20 34 L 20 26 Z"/></svg>

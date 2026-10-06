@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" color="#1A1817" role="img"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes uiPop {
+          0% { transform: scale(0.8); opacity: 0; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+        svg { animation: uiPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; transform-origin: center; }
+      }
+    </style><title>Favorito</title><desc>Corazón disabled</desc><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.1 7.5" d="M 24 39.26 C 18.15 35.13 11.61 30.66 9.2 24.47 C 7.31 18.96 9.55 14.15 14.37 12.77 C 18.67 11.56 22.28 13.8 23.66 17.59 C 25.38 13.8 29.33 11.74 33.63 13.46 C 38.45 15.35 39.48 21.03 37.42 25.5 C 35.53 29.97 29.85 35.13 24 39.26 Z"/></svg>

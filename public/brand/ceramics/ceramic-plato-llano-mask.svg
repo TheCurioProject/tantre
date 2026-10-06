@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="48 48 416 416" color="#1A1817" role="img">
+<style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes floatObject {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-2%); }
+        }
+        #tantre-anim-group {
+          animation: floatObject 5s ease-in-out infinite;
+          transform-origin: center;
+        }
+      }
+    </style>
+<title>Máscara de pintura</title>
+<path fill="#1A1817" d="M 441 262 C 441 285.12 426.97 312.65 405.67 331.36 C 384.36 350.06 347.64 367.08 313.17 374.22 C 278.7 381.37 233.3 381.37 198.83 374.22 C 164.36 367.08 127.64 350.06 106.33 331.36 C 85.03 312.65 71 285.12 71 262 C 71 238.88 85.03 211.35 106.33 192.64 C 127.64 173.94 164.36 156.92 198.83 149.78 C 233.3 142.63 278.7 142.63 313.17 149.78 C 347.64 156.92 384.36 173.94 405.67 192.64 C 426.97 211.35 441 238.88 441 262 Z"/>
+<g id="tantre-anim-group">
+<path fill="none" stroke="#1A1817" stroke-width="26" stroke-linecap="round" stroke-linejoin="round" d="M 441 262 C 441 285.12 426.97 312.65 405.67 331.36 C 384.36 350.06 347.64 367.08 313.17 374.22 C 278.7 381.37 233.3 381.37 198.83 374.22 C 164.36 367.08 127.64 350.06 106.33 331.36 C 85.03 312.65 71 285.12 71 262 C 71 238.88 85.03 211.35 106.33 192.64 C 127.64 173.94 164.36 156.92 198.83 149.78 C 233.3 142.63 278.7 142.63 313.17 149.78 C 347.64 156.92 384.36 173.94 405.67 192.64 C 426.97 211.35 441 238.88 441 262 Z"/>
+</g>
+</svg>

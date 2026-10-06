@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" color="#1A1817" role="img"><style id="tantre-anim">
+        @media (prefers-reduced-motion: no-preference) {
+          @keyframes pop { 0% { transform: scale(0.9); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+          svg { animation: pop 0.5s ease-out forwards; transform-origin: center; }
+        }
+      </style><title>Listo</title><desc>Check compacto</desc><path fill="none" stroke="currentColor" stroke-width="10.94" stroke-linecap="round" stroke-linejoin="round" d="M 60 128 C 67.09 134.22 81.9 174.31 102.56 165.31 C 123.23 156.31 170.43 89.22 184 74"/></svg>

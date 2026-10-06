@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" color="#1A1817" role="img"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes draw {
+          from { stroke-dashoffset: 1000; }
+          to { stroke-dashoffset: 0; }
+        }
+        path {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: draw 2s ease-out forwards;
+        }
+      }
+    </style><title>Punto vivo</title><desc>Punto dibujado</desc><path fill="none" stroke="currentColor" stroke-width="14.7" stroke-linecap="round" stroke-linejoin="round" d="M 54 60 L 66 60"/></svg>

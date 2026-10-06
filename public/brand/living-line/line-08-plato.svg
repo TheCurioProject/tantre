@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" color="#1A1817" role="img"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes draw {
+          from { stroke-dashoffset: 1000; }
+          to { stroke-dashoffset: 0; }
+        }
+        path {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: draw 2s ease-out forwards;
+        }
+      }
+    </style><title>Plato vivo</title><desc>Plato con pozo</desc><path fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M 104 60 C 104 65.34 100.66 71.71 95.6 76.03 C 90.53 80.36 81.8 84.29 73.6 85.94 C 65.4 87.6 54.6 87.6 46.4 85.94 C 38.2 84.29 29.47 80.36 24.4 76.03 C 19.34 71.71 16 65.34 16 60 C 16 54.66 19.34 48.29 24.4 43.97 C 29.47 39.64 38.2 35.71 46.4 34.06 C 54.6 32.4 65.4 32.4 73.6 34.06 C 81.8 35.71 90.53 39.64 95.6 43.97 C 100.66 48.29 104 54.66 104 60 Z"/><path fill="none" stroke="currentColor" stroke-width="6.3" stroke-linecap="round" stroke-linejoin="round" d="M 87 60 C 87 63.28 84.95 67.19 81.84 69.84 C 78.73 72.49 73.37 74.91 68.34 75.92 C 63.31 76.93 56.69 76.93 51.66 75.92 C 46.63 74.91 41.27 72.49 38.16 69.84 C 35.05 67.19 33 63.28 33 60 C 33 56.72 35.05 52.81 38.16 50.16 C 41.27 47.51 46.63 45.09 51.66 44.08 C 56.69 43.07 63.31 43.07 68.34 44.08 C 73.37 45.09 78.73 47.51 81.84 50.16 C 84.95 52.81 87 56.72 87 60 Z"/></svg>

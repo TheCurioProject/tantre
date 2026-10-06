@@ -1,0 +1,63 @@
+{
+  "name": "tantre-living-canvas",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "next dev --webpack --hostname 127.0.0.1",
+    "build": "node scripts/assets.mjs && next build --webpack && node scripts/headers.mjs",
+    "preview": "wrangler dev --port 8787",
+    "deploy": "npm run build && wrangler deploy",
+    "deploy:check": "wrangler deploy --dry-run --outdir .worker-build",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint --no-warn-ignored src worker scripts tests *.ts *.mts *.mjs",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "check": "npm run typecheck && npm run lint && npm test",
+    "db:verify": "node scripts/db-verify.mjs",
+    "assets": "node scripts/assets.mjs",
+    "preview:portable": "node scripts/preview.mjs",
+    "format": "prettier --write src worker scripts tests *.ts *.mts *.mjs *.json .github/workflows/*.yml docs/*.md README.md",
+    "db:concurrency": "node scripts/db-concurrency.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "5.3.0",
+    "@fontsource/instrument-serif": "5.3.0",
+    "@gsap/react": "2.1.2",
+    "@hookform/resolvers": "5.9.1",
+    "framer-motion": "^14.0.0",
+    "gsap": "3.15.0",
+    "next": "16.3.8",
+    "qrcode": "1.5.4",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "react-hook-form": "7.89.0",
+    "web-vitals": "6.2.2",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "@cloudflare/workers-types": "5.20261005.1",
+    "@electric-sql/pglite": "0.5.8",
+    "@playwright/test": "1.63.0",
+    "@tailwindcss/postcss": "4.3.3",
+    "@types/node": "26.6.4",
+    "@types/pg": "8.23.1",
+    "@types/qrcode": "1.5.6",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "esbuild": "0.28.2",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.8",
+    "pg": "8.23.1",
+    "prettier": "3.9.9",
+    "sharp": "0.35.5",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3",
+    "vitest": "5.0.3",
+    "wrangler": "4.147.0"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "generated_at": "2026-10-06T02:42:05.817Z",
+  "home_html_gzip_kib": 26.5,
+  "home_initial_js_gzip_kib": 311.1,
+  "initial_script_files": 16,
+  "max_header_line": 574,
+  "note": "Build sizes, not field Core Web Vitals. Lazy chunks and content uploaded after deployment are not included."
+}

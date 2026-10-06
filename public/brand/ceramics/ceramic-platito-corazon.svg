@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="48 48 416 416" color="#1A1817" role="img">
+<style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes floatObject {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-2%); }
+        }
+        #tantre-anim-group {
+          animation: floatObject 5s ease-in-out infinite;
+          transform-origin: center;
+        }
+      }
+    </style>
+<title>Platito corazón</title><desc>Platito con corazón pintado</desc>
+
+<g id="tantre-anim-group">
+<path fill="#E0519E" stroke="#1A1817" stroke-width="14.59" stroke-linecap="round" stroke-linejoin="round" d="M 256 332.52 C 228.58 313.16 197.94 292.19 186.65 263.16 C 177.77 237.35 188.26 214.77 210.84 208.32 C 231 202.68 247.94 213.16 254.39 230.9 C 262.45 213.16 281 203.48 301.16 211.55 C 323.74 220.42 328.58 247.03 318.9 268 C 310.03 288.97 283.42 313.16 256 332.52 Z"/><path fill="none" stroke="#5B7BD8" stroke-width="13.62" stroke-linecap="round" stroke-linejoin="round" d="M 120 330 C 142.61 333.61 210.3 351.64 255.63 351.64 C 300.96 351.64 369.27 333.61 392 330"/>
+</g>
+</svg>

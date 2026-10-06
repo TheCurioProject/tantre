@@ -1,0 +1,15 @@
+node_modules/
+.next/
+out/
+.wrangler/
+.worker-build/
+.dev.vars
+.env*
+!.env.example
+playwright-report/
+test-results/
+coverage/
+*.tsbuildinfo
+.DS_Store
+*.zip
+tmp/

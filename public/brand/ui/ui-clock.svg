@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" color="#1A1817" role="img"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes uiPop {
+          0% { transform: scale(0.8); opacity: 0; }
+          100% { transform: scale(1); opacity: 1; }
+        }
+        svg { animation: uiPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards; transform-origin: center; }
+      }
+    </style><title>Horario</title><desc>Reloj</desc><path fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" d="M 39 24 C 39 26.94 37.86 30.44 36.14 32.82 C 34.41 35.19 31.43 37.36 28.64 38.27 C 25.84 39.17 22.16 39.17 19.36 38.27 C 16.57 37.36 13.59 35.19 11.86 32.82 C 10.14 30.44 9 26.94 9 24 C 9 21.06 10.14 17.56 11.86 15.18 C 13.59 12.81 16.57 10.64 19.36 9.73 C 22.16 8.83 25.84 8.83 28.64 9.73 C 31.43 10.64 34.41 12.81 36.14 15.18 C 37.86 17.56 39 21.06 39 24 Z"/><path fill="none" stroke="currentColor" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round" d="M 24 15 L 24 25 L 31 29"/></svg>

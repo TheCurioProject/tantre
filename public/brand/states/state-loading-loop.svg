@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" color="#1A1817" role="img"><style id="tantre-anim">
+        @media (prefers-reduced-motion: no-preference) {
+          @keyframes spin { 100% { transform: rotate(360deg); } }
+          svg { animation: spin 1s linear infinite; transform-origin: center; }
+        }
+      </style><title>Cargando</title><desc>Indicador giratorio animable</desc><path fill="none" stroke="#1A1817" stroke-width="9.12" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="292 98" d="M 182 120 C 182 132.15 177.3 146.62 170.16 156.44 C 163.02 166.27 150.71 175.21 139.16 178.97 C 127.61 182.72 112.39 182.72 100.84 178.97 C 89.29 175.21 76.98 166.27 69.84 156.44 C 62.7 146.62 58 132.15 58 120 C 58 107.85 62.7 93.38 69.84 83.56 C 76.98 73.73 89.29 64.79 100.84 61.03 C 112.39 57.28 127.61 57.28 139.16 61.03 C 150.71 64.79 163.02 73.73 170.16 83.56 C 177.3 93.38 182 107.85 182 120 Z"/><path fill="#E0519E" d="M 132 58 C 132 60.35 131.09 63.15 129.71 65.05 C 128.33 66.96 125.94 68.69 123.71 69.41 C 121.47 70.14 118.53 70.14 116.29 69.41 C 114.06 68.69 111.67 66.96 110.29 65.05 C 108.91 63.15 108 60.35 108 58 C 108 55.65 108.91 52.85 110.29 50.95 C 111.67 49.04 114.06 47.31 116.29 46.59 C 118.53 45.86 121.47 45.86 123.71 46.59 C 125.94 47.31 128.33 49.04 129.71 50.95 C 131.09 52.85 132 55.65 132 58 Z"/></svg>

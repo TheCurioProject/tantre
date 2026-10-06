@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" color="#1A1817" role="img"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes draw {
+          from { stroke-dashoffset: 1000; }
+          to { stroke-dashoffset: 0; }
+        }
+        path {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: draw 2s ease-out forwards;
+        }
+      }
+    </style><title>Estrella viva</title><desc>Estrella de 5 puntas</desc><path fill="none" stroke="currentColor" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" d="M 60.35 19.62 C 63.92 19.52 63.81 42.1 70.46 47.06 C 77.11 52.01 99.11 45.96 100.25 49.34 C 101.39 52.71 79.85 59.59 77.3 67.31 C 74.75 75.04 87.82 93.63 84.97 95.7 C 82.13 97.78 68.48 79.69 60.22 79.75 C 51.97 79.82 38.33 98.08 35.42 96.09 C 32.5 94.09 45.3 75.66 42.72 67.78 C 40.15 59.91 18.92 52.19 19.98 48.83 C 21.03 45.48 42.31 52.52 49.04 47.65 C 55.77 42.78 56.78 19.72 60.35 19.62 Z"/></svg>

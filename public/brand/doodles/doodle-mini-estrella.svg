@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" color="#1A1817" aria-hidden="true" focusable="false"><style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes draw {
+          from { stroke-dashoffset: 1000; }
+          to { stroke-dashoffset: 0; }
+        }
+        path {
+          stroke-dasharray: 1000;
+          stroke-dashoffset: 1000;
+          animation: draw 2s ease-out forwards;
+        }
+      }
+    </style><path fill="#F2C14E" stroke="currentColor" stroke-width="3.84" stroke-linecap="round" stroke-linejoin="round" d="M 60.27 19.84 C 64.1 19.86 64.9 41.99 71.44 46.81 C 77.98 51.63 98.41 45.2 99.5 48.76 C 100.6 52.32 80.43 60.33 77.99 68.15 C 75.56 75.98 87.89 93.58 84.87 95.7 C 81.85 97.82 68.19 80.81 59.87 80.86 C 51.55 80.92 37.98 98.19 34.93 96.02 C 31.88 93.85 44.01 75.66 41.57 67.83 C 39.13 60.01 19.14 52.59 20.29 49.07 C 21.43 45.55 41.79 51.57 48.45 46.7 C 55.11 41.83 56.43 19.82 60.27 19.84 Z"/></svg>

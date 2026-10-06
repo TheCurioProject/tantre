@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="48 48 416 416" color="#1A1817" role="img">
+<style id="tantre-anim">
+      @media (prefers-reduced-motion: no-preference) {
+        @keyframes floatObject {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-2%); }
+        }
+        #tantre-anim-group {
+          animation: floatObject 5s ease-in-out infinite;
+          transform-origin: center;
+        }
+      }
+    </style>
+<title>Charola oval</title><desc>Charola para pintar</desc>
+
+<g id="tantre-anim-group">
+<path fill="#FDF6EC" stroke="#1A1817" stroke-width="19.46" stroke-linecap="round" stroke-linejoin="round" d="M 114 250 C 114 253.92 112.03 258.59 109.03 261.76 C 106.04 264.93 100.88 267.81 96.03 269.02 C 91.19 270.23 84.81 270.23 79.97 269.02 C 75.12 267.81 69.96 264.93 66.97 261.76 C 63.97 258.59 62 253.92 62 250 C 62 246.08 63.97 241.41 66.97 238.24 C 69.96 235.07 75.12 232.19 79.97 230.98 C 84.81 229.77 91.19 229.77 96.03 230.98 C 100.88 232.19 106.04 235.07 109.03 238.24 C 112.03 241.41 114 246.08 114 250 Z"/><path fill="#FDF6EC" stroke="#1A1817" stroke-width="19.46" stroke-linecap="round" stroke-linejoin="round" d="M 450 250 C 450 253.92 448.03 258.59 445.03 261.76 C 442.04 264.93 436.88 267.81 432.03 269.02 C 427.19 270.23 420.81 270.23 415.97 269.02 C 411.12 267.81 405.96 264.93 402.97 261.76 C 399.97 258.59 398 253.92 398 250 C 398 246.08 399.97 241.41 402.97 238.24 C 405.96 235.07 411.12 232.19 415.97 230.98 C 420.81 229.77 427.19 229.77 432.03 230.98 C 436.88 232.19 442.04 235.07 445.03 238.24 C 448.03 241.41 450 246.08 450 250 Z"/><path fill="none" stroke="#3EB878" stroke-width="17.51" stroke-linecap="round" stroke-linejoin="round" d="M 140 258 C 159.47 254.51 218.16 237.08 256.82 237.08 C 295.49 237.08 352.8 254.51 372 258"/><path fill="none" stroke="#E0519E" stroke-width="13.62" stroke-linecap="round" stroke-linejoin="round" d="M 150 280 C 167.66 277.47 220.65 264.79 255.98 264.79 C 291.31 264.79 344.33 277.47 362 280"/>
+</g>
+</svg>

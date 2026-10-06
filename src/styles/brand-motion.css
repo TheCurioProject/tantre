@@ -1,0 +1,144 @@
+/* Move inner details only: outer SVG transforms still belong to the existing
+   scroll/entrance choreography. No filters, path morphs or permanent layers.
+   Negative delays stagger continuous loops without an initial waiting period. */
+@media (prefers-reduced-motion: no-preference) {
+  .brand .brand-detail {
+    transform-box: fill-box;
+    transform-origin: center;
+    animation-duration: 9s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+  }
+
+  .brand[data-motion-playing="true"] .brand-detail {
+    animation-play-state: running;
+  }
+
+  .brand .brand-detail--steam {
+    animation-name: tantre-detail-steam;
+    animation-duration: 7s;
+    animation-delay: -1.4s;
+  }
+
+  .brand .brand-detail--heat {
+    animation-name: tantre-detail-steam;
+    animation-duration: 8s;
+    animation-delay: -2.8s;
+  }
+
+  .brand .brand-detail--brush {
+    transform-box: view-box;
+    transform-origin: 70% 43%;
+    animation-name: tantre-detail-brush;
+    animation-delay: -1.8s;
+  }
+
+  .brand .brand-detail--heart {
+    animation-name: tantre-detail-heart;
+    animation-duration: 7s;
+    animation-delay: -3.2s;
+  }
+
+  .brand .brand-detail--flower {
+    animation-name: tantre-detail-flower;
+    animation-duration: 10s;
+    animation-delay: -4s;
+  }
+
+  .brand .brand-detail--star {
+    animation-name: tantre-detail-star;
+    animation-duration: 9s;
+    animation-delay: -2.4s;
+  }
+
+  .brand .brand-detail--glimmer {
+    animation-name: tantre-detail-glimmer;
+    animation-duration: 8s;
+    animation-delay: -0.8s;
+  }
+
+  .coffee-mini .brand-detail {
+    animation-delay: -3.6s;
+  }
+  .community-drawing .brand-detail {
+    animation-delay: -2s;
+  }
+
+  @keyframes tantre-detail-steam {
+    0%,
+    100% {
+      transform: translate(0, 0);
+      opacity: 1;
+    }
+    33% {
+      transform: translate(1%, -5%);
+      opacity: 0.8;
+    }
+    66% {
+      transform: translate(-0.5%, -8%);
+      opacity: 0.9;
+    }
+  }
+
+  @keyframes tantre-detail-brush {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    33% {
+      transform: rotate(-2.5deg);
+    }
+    66% {
+      transform: rotate(1deg);
+    }
+  }
+
+  @keyframes tantre-detail-heart {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.035);
+    }
+  }
+
+  @keyframes tantre-detail-flower {
+    0%,
+    100% {
+      transform: rotate(-1.5deg);
+    }
+    50% {
+      transform: rotate(3deg);
+    }
+  }
+
+  @keyframes tantre-detail-star {
+    0%,
+    100% {
+      transform: rotate(0deg) scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: rotate(3deg) scale(1.035);
+      opacity: 0.86;
+    }
+  }
+
+  @keyframes tantre-detail-glimmer {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.78;
+    }
+  }
+}
+
+@media print {
+  .brand .brand-detail {
+    animation: none;
+  }
+}
