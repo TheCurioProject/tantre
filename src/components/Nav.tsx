@@ -25,6 +25,10 @@ export function Nav() {
     // Use GSAP ScrollTrigger to toggle classes directly on the DOM node.
     const heroHeight = window.innerHeight * 0.85;
     
+    if (open) {
+      headerRef.current.classList.remove("hidden");
+    }
+
     const ctx = gsap.context(() => {
       ScrollTrigger.create({
         start: "top top",

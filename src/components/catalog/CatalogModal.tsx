@@ -364,9 +364,11 @@ export function CatalogModal({
     </>
   );
   return (
+    <>
     <AnimatePresence>
       {isOpen && (
         <motion.div
+          key="overlay-bg"
           className="catalog-overlay"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -376,68 +378,73 @@ export function CatalogModal({
             position: "fixed",
             inset: 0,
             zIndex: 90,
-            display: "flex",
-            flexDirection: "column",
-            justifyContent: "flex-end",
             background: "rgba(24, 23, 22, 0.4)",
             backdropFilter: "blur(4px)",
           }}
+        />
+      )}
+      {isOpen && device === "desktop" && (
+        <motion.div
+          key="desktop-sidebar"
+          className="catalog-desktop-sidebar"
+          initial={{ x: "100%" }}
+          animate={{ x: 0 }}
+          exit={{ x: "100%" }}
+          transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+          style={{
+            position: "fixed",
+            top: 0,
+            right: 0,
+            bottom: 0,
+            width: "450px",
+            maxWidth: "90vw",
+            zIndex: 110,
+            background: "var(--ceramic)",
+            borderLeft: "1px solid var(--line)",
+            display: "flex",
+            flexDirection: "column",
+            overflow: "hidden",
+            boxShadow: "-4px 0 24px rgba(0,0,0,0.1)",
+          }}
         >
-          {device === "desktop" ? (
-            <motion.div
-              className="catalog-desktop-sidebar"
-              initial={{ x: "100%" }}
-              animate={{ x: 0 }}
-              exit={{ x: "100%" }}
-              transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              style={{
-                position: "absolute",
-                top: "92px",
-                right: 0,
-                bottom: 0,
-                width: "450px",
-                maxWidth: "90vw",
-                background: "var(--ceramic)",
-                borderLeft: "1px solid var(--line)",
-                display: "flex",
-                flexDirection: "column",
-                overflow: "hidden",
-                boxShadow: "-4px 0 24px rgba(0,0,0,0.1)",
-              }}
-            >
-              {modalContent}
-            </motion.div>
-          ) : device === "pending" ? (
-            <motion.div
-              className="catalog-mobile-modal pending"
-              initial={{ y: "100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "100%" }}
-              transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
-              style={{
-                position: "absolute",
-                top: "92px",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                background: "var(--ceramic)",
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                justifyContent: "center",
-                textAlign: "center"
-              }}
-            >
-              <Brand name="state-loading-static" />
-              <h1>Abre un mundo de posibilidades.</h1>
-              <p>Una experiencia para tu teléfono o tableta.</p>
-            </motion.div>
-          ) : (
-            <motion.div
-              className="catalog-mobile-modal"
-              initial={{ y: "-100%" }}
-              animate={{ y: 0 }}
-              exit={{ y: "-100%" }}
+          {modalContent}
+        </motion.div>
+      )}
+      {isOpen && device === "pending" && (
+        <motion.div
+          key="mobile-pending"
+          className="catalog-mobile-modal pending"
+          initial={{ y: "100%" }}
+          animate={{ y: 0 }}
+          exit={{ y: "100%" }}
+          transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
+          style={{
+            position: "fixed",
+            top: "92px",
+            bottom: 0,
+            left: 0,
+            right: 0,
+            zIndex: 110,
+            background: "var(--ceramic)",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            justifyContent: "center",
+            textAlign: "center"
+          }}
+        >
+          <Brand name="state-loading-static" />
+          <h1>Abre un mundo de posibilidades.</h1>
+          <p>Una experiencia para tu teléfono o tableta.</p>
+        </motion.div>
+      )}
+      {isOpen && device === "mobile" && (
+        <motion.div
+          key="mobile-modal"
+          className="catalog-mobile-modal"
+          initial={{ y: "-100%" }}
+          animate={{ y: 0 }}
+          exit={{ y: "-100%" }}
               transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
               style={{
                 position: "absolute",
@@ -454,6 +461,8 @@ export function CatalogModal({
               {modalContent}
             </motion.div>
           )}
+
+    </AnimatePresence>
 
           <dialog
             ref={sheet}
@@ -534,8 +543,6 @@ export function CatalogModal({
               </>
             )}
           </dialog>
-        </motion.div>
-      )}
-    </AnimatePresence>
+    </>
   );
 }
