@@ -102,17 +102,9 @@ export function Packages() {
             <Brand name="doodle-subrayado" />
           </div>
         </h3>
-        <p className="packages-hint">
-          Sigue deslizando para explorar
-        </p>
       </motion.div>
       
       <div className="packages-stack-container">
-        {/* Sticky Scroll Indicator */}
-        <div className="stack-scroll-indicator desktop-only">
-          <span className="indicator-desktop">Continúa bajando ↓</span>
-        </div>
-
         {packages.map((pkg, i) => (
           <PackageCard 
             key={i} 
@@ -123,10 +115,6 @@ export function Packages() {
           />
         ))}
 
-        {/* Mobile Scroll Indicator at the bottom */}
-        <div className="stack-scroll-indicator mobile-indicator-bottom">
-          <span className="indicator-mobile" style={{ display: "inline" }}>Continúa deslizando ↓</span>
-        </div>
       </div>
     </section>
   );
