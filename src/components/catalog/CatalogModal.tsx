@@ -442,12 +442,12 @@ export function CatalogModal({
         <motion.div
           key="mobile-modal"
           className="catalog-mobile-modal"
-          initial={{ y: "-100%" }}
+          initial={{ y: "100%" }}
           animate={{ y: 0 }}
-          exit={{ y: "-100%" }}
+          exit={{ y: "100%" }}
               transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
               style={{
-                position: "absolute",
+                position: "fixed",
                 top: "92px",
                 bottom: 0,
                 left: 0,
