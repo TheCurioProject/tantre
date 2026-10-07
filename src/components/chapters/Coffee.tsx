@@ -14,16 +14,15 @@ export function Coffee() {
       <div className="coffee-copy">
         <p className="eyebrow">04 / ENTRE UNA PINCELADA Y OTRA</p>
         <h2>
-          También venimos
+          El complemento
           <br />
-          por <em>el café.</em>
+          <em>perfecto.</em>
         </h2>
         <p>
-          Una taza caliente. Algo rico para compartir. Y esa conversación que
-          no quieres que se acabe.
+          Sabemos que la inspiración fluye mejor con una buena taza. Nuestra barra de especialidad y selección de repostería artesanal están pensadas para acompañar cada una de tus pinceladas y hacer que no quieras irte.
         </p>
-        <a href="/catalogo/cafe/" className="text-link">
-          Descubre café & snacks
+        <a href="/reservar/" className="text-link">
+          Ven a vivir la experiencia
           <Brand name="ui-forward" />
         </a>
         <Brand name="illus-cafe-pausa" className="coffee-mini" />

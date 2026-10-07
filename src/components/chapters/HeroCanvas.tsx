@@ -100,9 +100,6 @@ export function HeroCanvas() {
             <br className="desktop-only" /> Un ratito para estar aquí, de
             verdad.
           </p>
-          <a className="button" href="/reservar/">
-            Reserva tu mesa <Brand name="ui-forward" />
-          </a>
         </div>
       </div>
       <div className="hero-visual">
@@ -116,11 +113,9 @@ export function HeroCanvas() {
         </div>
         <div className="hero-art">
           <div className="hero-color-field" aria-hidden="true" />
-          <span className="art-index">ESTUDIO DE UNA POSIBILIDAD — 001</span>
           <Brand name="mask-paint-03" className="hero-swatch" />
           <Brand name="ceramic-taza-clasica" className="ceramic-drawing" />
           <Brand name="doodle-mini-flor" className="hero-flower" />
-          <span className="art-caption">Aquí empieza algo tuyo.</span>
         </div>
         <LivingLine state={line} className="hero-living" />
         <div className="hero-footnote">

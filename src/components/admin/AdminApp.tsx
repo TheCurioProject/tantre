@@ -1,5 +1,6 @@
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
+import { motion } from "framer-motion";
 import { api, ApiError, mediaUrl } from "@/lib/api";
 import type { Staff, CatalogItem, Category } from "@/lib/types";
 import { money, fullDate, time, localDate } from "@/lib/utils";
@@ -12,6 +13,8 @@ import {
 import { Brand } from "../brand/Brand";
 import { State } from "../brand/State";
 import { useToast } from "../Providers";
+import { AdminShell } from "./AdminShell";
+import { PageHeading, Empty } from "./ui";
 const message = (error: unknown) =>
   error instanceof ZodError
     ? error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join(" · ")
@@ -482,6 +485,21 @@ function CatalogEditor({ canWrite }: { canWrite: boolean }) {
       setBusy(false);
     }
   }
+  async function togglePublish(i: CatalogItem) {
+    try {
+      await api("/admin/items", {
+        method: "POST",
+        body: JSON.stringify({
+          item: { ...i, published: !i.published },
+          meta: i.type === "ceramic" ? i.ceramic_meta || {} : i.cafe_meta || {},
+        }),
+      });
+      await load();
+      toast(i.published ? "Ocultado del catálogo" : "Publicado en el catálogo");
+    } catch (e) {
+      toast("Error al actualizar estado");
+    }
+  }
   const assets =
     value?.type === "cafe"
       ? [
@@ -761,9 +779,44 @@ function CatalogEditor({ canWrite }: { canWrite: boolean }) {
                     </p>
                   </div>
                   {canWrite && (
-                    <button className="text-link" onClick={() => edit(i)}>
-                      Editar
-                    </button>
+                    <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+                      <button 
+                        onClick={() => togglePublish(i)} 
+                        aria-label={i.published ? "Ocultar" : "Mostrar"}
+                        style={{ background: "none", border: "none", cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center" }}
+                      >
+                        <motion.svg
+                          width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
+                          animate={i.published ? "visible" : "hidden"}
+                          variants={{
+                            visible: { color: "var(--ink)" },
+                            hidden: { color: "#a09c96" }
+                          }}
+                        >
+                          {/* Eye outline */}
+                          <motion.path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                          {/* Eye pupil */}
+                          <motion.circle cx="12" cy="12" r="3" 
+                            variants={{
+                              visible: { scale: 1, opacity: 1 },
+                              hidden: { scale: 0.5, opacity: 0 }
+                            }}
+                          />
+                          {/* Slash line for hidden state */}
+                          <motion.line x1="4" y1="4" x2="20" y2="20"
+                            initial={{ pathLength: 0, opacity: 0 }}
+                            variants={{
+                              visible: { pathLength: 0, opacity: 0 },
+                              hidden: { pathLength: 1, opacity: 1 }
+                            }}
+                            transition={{ duration: 0.3 }}
+                          />
+                        </motion.svg>
+                      </button>
+                      <button className="text-link" onClick={() => edit(i)}>
+                        Editar
+                      </button>
+                    </div>
                   )}
                 </div>
               ))}
@@ -1602,17 +1655,20 @@ function Team() {
     </>
   );
 }
-export function AdminApp() {
+export function AdminApp({ path }: { path?: string[] }) {
   const [user, setUser] = useState<Staff | null>(null),
     [checking, setChecking] = useState(true),
     [error, setError] = useState(""),
     [busy, setBusy] = useState(false),
-    [tab, setTab] = useState("dashboard");
+    [showPassword, setShowPassword] = useState(false);
+    
+  let tab = path?.[0] || 'dashboard';
+  if (user?.role === "editor" && !path?.[0]) tab = "catalog";
+
   useEffect(() => {
     api<Staff>("/admin/me")
       .then((p) => {
         setUser(p);
-        if (p.role === "editor") setTab("items");
       })
       .catch((e) => {
         if (!(e instanceof ApiError && e.status === 401)) setError(e.message);
@@ -1633,7 +1689,7 @@ export function AdminApp() {
         }),
       });
       setUser(staff);
-      setTab(staff.role === "editor" ? "items" : "dashboard");
+      window.location.href = "/admin";
     } catch (e) {
       setError((e as Error).message);
     } finally {
@@ -1664,13 +1720,50 @@ export function AdminApp() {
           </label>
           <label className="field">
             Contraseña
-            <input
-              name="password"
-              type="password"
-              autoComplete="current-password"
-              required
-              minLength={8}
-            />
+            <div style={{ position: "relative", display: "flex", alignItems: "center" }}>
+              <input
+                name="password"
+                type={showPassword ? "text" : "password"}
+                autoComplete="current-password"
+                required
+                minLength={8}
+                style={{ width: "100%", paddingRight: "40px" }}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                aria-label={showPassword ? "Ocultar" : "Mostrar"}
+                title={showPassword ? "Ocultar" : "Mostrar"}
+                style={{
+                  position: "absolute",
+                  right: "10px",
+                  background: "none",
+                  border: "none",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  padding: 0,
+                  color: "var(--ink, #252422)",
+                }}
+              >
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  {showPassword ? (
+                    <>
+                      <path d="M9.88 9.88a3 3 0 1 0 4.24 4.24" />
+                      <path d="M10.73 5.08A10.43 10.43 0 0 1 12 5c7 0 10 7 10 7a13.16 13.16 0 0 1-1.67 2.68" />
+                      <path d="M6.61 6.61A13.526 13.526 0 0 0 2 12s3 7 10 7a9.74 9.74 0 0 0 5.39-1.61" />
+                      <line x1="2" y1="2" x2="22" y2="22" />
+                    </>
+                  ) : (
+                    <>
+                      <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </>
+                  )}
+                </svg>
+              </button>
+            </div>
           </label>
           <button className="button" disabled={busy}>
             {busy ? "Entrando…" : "Entrar al estudio"}
@@ -1681,78 +1774,44 @@ export function AdminApp() {
     );
   const canWrite = user.role !== "viewer",
     ops = ["owner", "manager"].includes(user.role);
-  const tabs = [
-    ...(user.role !== "editor" ? [["dashboard", "Agenda"]] : []),
-    ["items", "Piezas & menú"],
-    ["catalog_categories", "Categorías"],
-    ["packages", "Paquetes"],
-    ["faqs", "Preguntas"],
-    ["testimonials", "Testimonios"],
-    ...(canWrite
-      ? [
-          ["media", "Medios"],
-          ["gallery", "Galería"],
-        ]
-      : []),
-    ...(ops
-      ? [
-          ["business_hours", "Horarios"],
-          ["schedule_exceptions", "Cierres"],
-          ["settings", "Ajustes"],
-          ["audit", "Historial"],
-        ]
-      : []),
-    ...(user.role === "owner" ? [["team", "Equipo"]] : []),
-  ];
+
   return (
-    <main id="main" className="admin-app">
-      <header className="admin-header">
-        <div>
-          <p className="eyebrow">EL ESTUDIO · {user.role}</p>
-          <h1>Hola, {user.display_name || "equipo"}.</h1>
-        </div>
-        <button
-          className="text-link"
-          onClick={async () => {
-            await api("/auth/logout", { method: "POST", body: "{}" });
-            setUser(null);
-          }}
-        >
-          Cerrar sesión
-        </button>
-      </header>
-      <div className="admin-layout">
-        <nav className="admin-nav" aria-label="Administración">
-          {tabs.map(([key, label]) => (
-            <button
-              key={key}
-              aria-current={tab === key ? "page" : undefined}
-              onClick={() => setTab(key)}
-            >
-              {label}
-            </button>
-          ))}
-        </nav>
+    <AdminShell>
+      <div className="admin-layout" style={{ display: 'block', paddingTop: 0 }}>
         <section className="admin-content">
           {tab === "dashboard" ? (
-            <Dashboard canWrite={ops} />
-          ) : tab === "items" ? (
-            <CatalogEditor canWrite={canWrite} />
-          ) : tab === "media" ? (
-            <MediaLibrary />
-          ) : tab === "gallery" ? (
-            <GalleryEditor />
+            <>
+              <PageHeading eyebrow={`EL ESTUDIO · ${user.role}`} title={`Hola, ${user.display_name || "equipo"}.`} />
+              <Dashboard canWrite={ops} />
+            </>
+          ) : tab === "catalog" || tab === "items" ? (
+            <>
+              <PageHeading title="Catálogo y Productos" />
+              <CatalogEditor canWrite={canWrite} />
+              <div style={{ marginTop: 40 }} />
+              <PageHeading title="Categorías de Catálogo" />
+              <ContentEditor resource={"catalog_categories"} canWrite={canWrite} />
+            </>
+          ) : tab === "faqs" ? (
+            <>
+              <PageHeading title="Preguntas Frecuentes" />
+              <ContentEditor resource={"faqs"} canWrite={canWrite} />
+            </>
+          ) : tab === "packages" ? (
+            <>
+              <PageHeading title="Paquetes y Eventos" />
+              <ContentEditor resource={"packages"} canWrite={canWrite} />
+            </>
           ) : tab === "settings" ? (
-            <Settings />
-          ) : tab === "team" ? (
-            <Team />
-          ) : tab === "audit" ? (
-            <Audit />
+            <>
+              <PageHeading title="Ajustes" />
+              <Settings />
+            </>
           ) : (
-            <ContentEditor resource={tab} canWrite={canWrite} />
+            <Empty title="Sección en construcción" description="Esta sección estará disponible pronto." />
           )}
         </section>
       </div>
-    </main>
+    </AdminShell>
   );
 }

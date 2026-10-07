@@ -3,10 +3,12 @@ import { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import { usePathname } from "next/navigation";
 import { usePublicData } from "./Providers";
 import { Brand } from "./brand/Brand";
 gsap.registerPlugin(ScrollTrigger, useGSAP);
 export function Footer() {
+  const pathname = usePathname();
   const ref = useRef<HTMLElement>(null);
   useGSAP(
     () => {
@@ -23,6 +25,7 @@ export function Footer() {
   );
   const { data } = usePublicData();
   const contact = data.settings.contact as { instagram?: string } | undefined;
+  if (pathname?.startsWith("/admin")) return null;
   return (
     <footer ref={ref} className="site-footer" style={{ 
       position: "relative",
@@ -35,8 +38,8 @@ export function Footer() {
       borderTopRightRadius: "50% 10%",
       marginTop: "4rem"
     }}>
-      <div className="footer-word" style={{ width: "100%", maxWidth: "350px", margin: "0 auto 3rem" }}>
-        <Brand name="brand-logo-cuadrado" className="brand-logo-footer" />
+      <div className="footer-word" style={{ width: "100%", maxWidth: "150px", margin: "0 auto 3rem", display: "flex", justifyContent: "center" }}>
+        <Brand name="brand-logo-cuadrado" className="brand-logo-footer" style={{ width: "100%", height: "auto" }} />
       </div>
       
       <div style={{ 

@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 
 const WORDS = [
   { text: "BARRO", font: "font-serif italic", size: "text-5xl md:text-7xl" },
@@ -14,10 +15,13 @@ const WORDS = [
 const steps = (n: number) => (v: number) => Math.floor(v * n) / n;
 
 export function TantreLoaderFramer() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [index, setIndex] = useState(0);
-  const [ready, setReady] = useState(false);
+  const [ready, setReady] = useState(!isHome);
 
   useEffect(() => {
+    if (!isHome) return;
     // Lock scroll and force to top so animations trigger correctly
     document.body.style.overflow = "hidden";
     window.scrollTo(0, 0);

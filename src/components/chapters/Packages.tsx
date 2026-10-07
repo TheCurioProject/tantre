@@ -109,9 +109,8 @@ export function Packages() {
       
       <div className="packages-stack-container">
         {/* Sticky Scroll Indicator */}
-        <div className="stack-scroll-indicator">
+        <div className="stack-scroll-indicator desktop-only">
           <span className="indicator-desktop">Continúa bajando ↓</span>
-          <span className="indicator-mobile">Continúa deslizando ↓</span>
         </div>
 
         {packages.map((pkg, i) => (
@@ -123,11 +122,17 @@ export function Packages() {
             total={packages.length} 
           />
         ))}
+
+        {/* Mobile Scroll Indicator at the bottom */}
+        <div className="stack-scroll-indicator mobile-indicator-bottom">
+          <span className="indicator-mobile" style={{ display: "inline" }}>Continúa deslizando ↓</span>
+        </div>
       </div>
     </section>
   );
 }
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function PackageCard({ pkg, index, progress, total }: any) {
   // Only apply scale and y effects, leaving opacity at 100% so they are not transparent.
   const startFade = index / total;

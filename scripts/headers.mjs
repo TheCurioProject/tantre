@@ -28,7 +28,7 @@ for (const file of (await walk("out")).filter((f) => f.endsWith(".html"))) {
           .replace(/^out\//, "")
           .replace(/index\.html$/, "")
           .replace(/\.html$/, "");
-  const csp = `default-src 'self'; script-src 'self' ${[...new Set(hashes)].join(" ")} https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.supabase.co; font-src 'self'; connect-src 'self' https://*.supabase.co https://*.posthog.com https://*.i.posthog.com https://*.ingest.sentry.io; frame-src https://challenges.cloudflare.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests`;
+  const csp = `default-src 'self'; script-src 'self' ${[...new Set(hashes)].join(" ")} https://challenges.cloudflare.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://*.supabase.co; font-src 'self'; connect-src 'self' https://*.supabase.co https://*.posthog.com https://*.i.posthog.com https://*.ingest.sentry.io; frame-src https://challenges.cloudflare.com https://www.google.com; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests`;
   rows.push(`${route}\n  Content-Security-Policy: ${csp}`);
 }
 rows.push(

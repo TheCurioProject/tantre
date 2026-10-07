@@ -213,8 +213,9 @@ async function rate(c: Context, action: string, limit = 10, seconds = 600) {
     );
 }
 function cookie(c: Context, name: string, value: string, maxAge: number) {
+  const isDev = c.env.APP_ENV === "development";
   c.cookies.push(
-    `${name}=${encodeURIComponent(value)}; Path=/api; HttpOnly; SameSite=Strict; Max-Age=${maxAge}${c.env.APP_ENV === "development" ? "" : "; Secure"}`,
+    `${name}=${encodeURIComponent(value)}; Path=/api; HttpOnly; SameSite=${isDev ? "None" : "Strict"}; Max-Age=${maxAge}; Secure`,
   );
 }
 function setSession(

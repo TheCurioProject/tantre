@@ -28,11 +28,13 @@ export function ChapterMotion({
   className = "",
   id,
   scene = "intro",
+  style,
 }: {
   children: React.ReactNode;
   className?: string;
   id?: string;
   scene?: Scene;
+  style?: React.CSSProperties;
 }) {
   const ref = useRef<HTMLDivElement>(null);
   useGSAP(
@@ -139,7 +141,7 @@ export function ChapterMotion({
     { scope: ref },
   );
   return (
-    <div ref={ref} id={id} className={className} data-scene={scene}>
+    <div ref={ref} id={id} className={className} data-scene={scene} style={style}>
       {children}
     </div>
   );
