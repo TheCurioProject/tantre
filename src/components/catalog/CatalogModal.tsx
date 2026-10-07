@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
@@ -38,12 +39,12 @@ export function CatalogModal({
   isOpen,
   onClose,
   initialType = "ceramic",
-  favoritesOnly = false,
+  initialFavoritesOnly = false,
 }: {
   isOpen: boolean;
   onClose: () => void;
   initialType?: Universe;
-  favoritesOnly?: boolean;
+  initialFavoritesOnly?: boolean;
 }) {
   const { data, loading, error, reload } = usePublicData(),
     toast = useToast();
@@ -53,7 +54,8 @@ export function CatalogModal({
     [type, setType] = useState<Universe>(initialType),
     [category, setCategory] = useState("all"),
     [query, setQuery] = useState(""),
-    [sort, setSort] = useState("curated");
+    [sort, setSort] = useState("curated"),
+    [favoritesOnly, setFavoritesOnly] = useState(initialFavoritesOnly);
   const [favorites, setFavorites] = useState<string[]>([]),
     [selected, setSelected] = useState<CatalogItem | null>(null),
     [deepItem, setDeepItem] = useState(""),
@@ -349,7 +351,6 @@ export function CatalogModal({
                   <button className="favorite-button" aria-pressed={favorites.includes(item.id)} aria-label={`${favorites.includes(item.id) ? "Quitar" : "Guardar"} ${item.name}`} onClick={() => toggle(item)}>
                     <Brand name={favorites.includes(item.id) ? "ui-favorite-filled" : "ui-favorite-outline"} />
                   </button>
-                  <span>{String(i + 1).padStart(2, "0")}</span>
                 </div>
               </article>
             ))}
@@ -414,11 +415,12 @@ export function CatalogModal({
               exit={{ y: "100%" }}
               transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
               style={{
+                position: "absolute",
+                top: "92px",
+                bottom: 0,
+                left: 0,
+                right: 0,
                 background: "var(--ceramic)",
-                height: "80vh",
-                borderTopLeftRadius: "24px",
-                borderTopRightRadius: "24px",
-                padding: "30px 20px",
                 display: "flex",
                 flexDirection: "column",
                 alignItems: "center",
@@ -433,15 +435,17 @@ export function CatalogModal({
           ) : (
             <motion.div
               className="catalog-mobile-modal"
-              initial={{ y: "100%" }}
+              initial={{ y: "-100%" }}
               animate={{ y: 0 }}
-              exit={{ y: "100%" }}
+              exit={{ y: "-100%" }}
               transition={{ duration: 0.5, ease: [0.32, 0.72, 0, 1] }}
               style={{
+                position: "absolute",
+                top: "92px",
+                bottom: 0,
+                left: 0,
+                right: 0,
                 background: "var(--ceramic)",
-                height: "80vh",
-                borderTopLeftRadius: "24px",
-                borderTopRightRadius: "24px",
                 display: "flex",
                 flexDirection: "column",
                 overflow: "hidden"

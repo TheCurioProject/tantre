@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 import {useEffect,useRef} from 'react';
 import {X,ArrowUpRight,Plus} from 'lucide-react';

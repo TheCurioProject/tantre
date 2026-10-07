@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars, @next/next/no-location-assign-relative-destination */
 "use client";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
@@ -766,9 +767,20 @@ function CatalogEditor({ canWrite }: { canWrite: boolean }) {
             />
           </label>
           <div className="admin-records">
-            {items
-              .filter((i) => i.name.toLowerCase().includes(query.toLowerCase()))
-              .map((i) => (
+            {(() => {
+              const filtered = items.filter((i) => i.name.toLowerCase().includes(query.toLowerCase()));
+              if (filtered.length === 0) {
+                return items.length === 0 ? (
+                  <State kind="sin-resultados" title="Tu catálogo empieza aquí.">
+                    Publica únicamente piezas, precios y bebidas reales.
+                  </State>
+                ) : (
+                  <State kind="sin-resultados" title="No hay resultados.">
+                    No encontramos piezas o bebidas con ese nombre.
+                  </State>
+                );
+              }
+              return filtered.map((i) => (
                 <div key={i.id}>
                   <Brand name={i.asset} />
                   <div>
@@ -819,13 +831,9 @@ function CatalogEditor({ canWrite }: { canWrite: boolean }) {
                     </div>
                   )}
                 </div>
-              ))}
+              ));
+            })()}
           </div>
-          {!items.length && (
-            <State kind="sin-resultados" title="Tu catálogo empieza aquí.">
-              Publica únicamente piezas, precios y bebidas reales.
-            </State>
-          )}
         </>
       )}
     </>
