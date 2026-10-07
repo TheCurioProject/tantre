@@ -4,10 +4,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { motion, AnimatePresence } from "framer-motion";
 import { Brand } from "./brand/Brand";
 import { CatalogModal } from "./catalog/CatalogModal";
 
 gsap.registerPlugin(ScrollTrigger);
+const MotionLink = motion.create(Link);
+
 export function Nav() {
   const [open, setOpen] = useState(false);
   const headerRef = useRef<HTMLElement>(null);
@@ -88,14 +91,24 @@ export function Nav() {
         </div>
       </header>
       <CatalogModal isOpen={open} onClose={close} />
-      
-      <Link href="/reservar/" className="mobile-sticky-reserve">
-        <span className="sticky-copy">Haz espacio para ti.</span>
-        <span>
-          Reservar
-          <Brand name="ui-forward" />
-        </span>
-      </Link>
+      <AnimatePresence>
+        {!open && (
+          <MotionLink 
+            href="/reservar/" 
+            className="mobile-sticky-reserve"
+            initial={{ y: "100%" }}
+            animate={{ y: 0 }}
+            exit={{ y: "100%" }}
+            transition={{ type: "spring", stiffness: 300, damping: 30 }}
+          >
+            <span className="sticky-copy">Haz espacio para ti.</span>
+            <span>
+              Reservar
+              <Brand name="ui-forward" />
+            </span>
+          </MotionLink>
+        )}
+      </AnimatePresence>
     </>
   );
 }
