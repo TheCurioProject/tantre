@@ -452,6 +452,7 @@ export function CatalogModal({
                 bottom: 0,
                 left: 0,
                 right: 0,
+                zIndex: 110,
                 background: "var(--ceramic)",
                 display: "flex",
                 flexDirection: "column",
