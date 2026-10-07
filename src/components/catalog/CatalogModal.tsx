@@ -438,7 +438,7 @@ export function CatalogModal({
           <p>Una experiencia para tu teléfono o tableta.</p>
         </motion.div>
       )}
-      {isOpen && device === "mobile" && (
+      {isOpen && device === "touch" && (
         <motion.div
           key="mobile-modal"
           className="catalog-mobile-modal"
